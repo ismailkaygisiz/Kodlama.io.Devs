@@ -19,7 +19,11 @@
   </ItemGroup>
 	
   <ItemGroup>
+    <Folder Include="Features\AppUsers\Constants\" />
+    <Folder Include="Features\AppUsers\Queries\" />
+    <Folder Include="Features\AppUsers\Rules\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
+    <Folder Include="Features\Technologies\Constants\" />
   </ItemGroup>
 
 </Project>

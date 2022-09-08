@@ -6,7 +6,6 @@ using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.UpdateP
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Dtos;
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Models;
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetByIdProgrammingLanguage;
-using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetListProgrammingLanguage;
 using Kodlama.io.Devs.Domain.Entities;
 
 namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Profiles
@@ -28,7 +27,6 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Profiles
             CreateMap<ProgrammingLanguage, GetByIdProgrammingLanguageQuery>().ReverseMap();
 
             CreateMap<ProgrammingLanguage, GetListProgrammingLanguageDto>().ReverseMap();
-            CreateMap<ProgrammingLanguage, GetListProgrammingLanguageQuery>().ReverseMap();
             CreateMap<IPaginate<ProgrammingLanguage>, GetListProgrammingLanguageModel>().ReverseMap();
         }
     }

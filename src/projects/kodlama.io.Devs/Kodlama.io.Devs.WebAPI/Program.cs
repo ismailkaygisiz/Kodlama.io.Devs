@@ -1,3 +1,4 @@
+using Application;
 using Core.CrossCuttingConcerns.Exceptions;
 using Kodlama.io.Devs.Application;
 using Kodlama.io.Devs.Persistence;
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSecurityServices();
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 
