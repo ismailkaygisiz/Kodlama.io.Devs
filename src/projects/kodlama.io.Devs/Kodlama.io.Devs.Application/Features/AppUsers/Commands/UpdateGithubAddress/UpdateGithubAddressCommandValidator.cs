@@ -6,7 +6,7 @@ namespace Kodlama.io.Devs.Application.Features.AppUsers.Commands.UpdateGithubAdd
     {
         public UpdateGithubAddressCommandValidator()
         {
-            RuleFor(c => c.GithubAddress).NotEmpty()
+            RuleFor(c => c.GithubAddress).NotEmpty();
         }
     }
 }
