@@ -39,12 +39,22 @@ namespace Kodlama.io.Devs.Persistence.Contexts
 
             modelBuilder.Entity<User>(a =>
             {
-                a.ToTable("Users");
+                a.ToTable("Users").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.FirstName).HasColumnName("FirstName");
+                a.Property(p => p.LastName).HasColumnName("LastName");
+                a.Property(p => p.Email).HasColumnName("Email");
+                a.Property(p => p.PasswordSalt).HasColumnName("PasswordSalt");
+                a.Property(p => p.PasswordHash).HasColumnName("PasswordHash");
+                a.Property(p => p.Status).HasColumnName("Status");
+                a.Property(p => p.AuthenticatorType).HasColumnName("AuthenticatorType");
             });
 
             modelBuilder.Entity<AppUser>(a =>
             {
                 a.ToTable("AppUsers");
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.GithubAddress).HasColumnName("GithubAddress");
             });
 
             ProgrammingLanguage[] programmingLanguages = { new(1, "Python"), new(2, "C#"), new(3, "Java") };

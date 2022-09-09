@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Persistence.Paging;
 using Kodlama.io.Devs.Application.Features.Technologies.Dtos;
 using Kodlama.io.Devs.Application.Features.Technologies.Rules;
 using Kodlama.io.Devs.Application.Services.Repositories;
@@ -25,15 +24,15 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.DeleteTechn
         public async Task<DeletedTechnologyDto> Handle(DeleteTechnologyCommand request, CancellationToken cancellationToken)
         {
             Technology mappedTechnology = _mapper.Map<Technology>(request);
-            
-            IPaginate<Technology> technologyToDelete = await _technologyRepository.GetListAsync(
+
+            Technology technologyToDelete = await _technologyRepository.GetAsync(
                 e => e.Id == mappedTechnology.Id,
                 include: p => p.Include(c => c.ProgrammingLanguage)
             );
 
-            await _technologyRepository.DeleteAsync(technologyToDelete.Items.FirstOrDefault());
+            await _technologyRepository.DeleteAsync(technologyToDelete);
 
-            DeletedTechnologyDto deletedTechnologyDto = _mapper.Map<DeletedTechnologyDto>(technologyToDelete.Items.FirstOrDefault());
+            DeletedTechnologyDto deletedTechnologyDto = _mapper.Map<DeletedTechnologyDto>(technologyToDelete);
 
             return deletedTechnologyDto;
         }

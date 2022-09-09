@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Persistence.Paging;
 using Kodlama.io.Devs.Application.Features.Technologies.Dtos;
 using Kodlama.io.Devs.Application.Services.Repositories;
 using Kodlama.io.Devs.Domain.Entities;
@@ -22,12 +21,12 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Queries.GetByIdTechn
         public async Task<GetByIdTechnologyDto> Handle(GetByIdTechnologyQuery request, CancellationToken cancellationToken)
         {
             Technology mappedTechnology = _mapper.Map<Technology>(request);
-            IPaginate<Technology> technology = await _technologyRepository.GetListAsync(
+            Technology technology = await _technologyRepository.GetAsync(
                 p => p.Id == mappedTechnology.Id,
-                include:p=>p.Include(c=>c.ProgrammingLanguage)
+                include: p => p.Include(c => c.ProgrammingLanguage)
             );
 
-            GetByIdTechnologyDto getByIdTechnologyDto = _mapper.Map<GetByIdTechnologyDto>(technology.Items.FirstOrDefault());
+            GetByIdTechnologyDto getByIdTechnologyDto = _mapper.Map<GetByIdTechnologyDto>(technology);
 
             return getByIdTechnologyDto;
         }

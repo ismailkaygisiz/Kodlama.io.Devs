@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Persistence.Paging;
 using Kodlama.io.Devs.Application.Features.Technologies.Dtos;
 using Kodlama.io.Devs.Application.Features.Technologies.Rules;
 using Kodlama.io.Devs.Application.Services.Repositories;
@@ -26,14 +25,14 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.UpdateTechn
         {
             Technology mappedTechnology = _mapper.Map<Technology>(request);
             Technology updatedTechnology = await _technologyRepository.UpdateAsync(mappedTechnology);
-            
-            IPaginate<Technology> technology = await _technologyRepository.GetListAsync(
+
+            Technology technology = await _technologyRepository.GetAsync(
               c => c.Id == updatedTechnology.Id,
               include: p => p.Include(c => c.ProgrammingLanguage)
             );
 
 
-            UpdatedTechnologyDto updatedTechnologyDto = _mapper.Map<UpdatedTechnologyDto>(technology.Items.FirstOrDefault());
+            UpdatedTechnologyDto updatedTechnologyDto = _mapper.Map<UpdatedTechnologyDto>(technology);
 
             return updatedTechnologyDto;
         }
