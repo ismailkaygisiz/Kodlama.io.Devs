@@ -5,7 +5,6 @@ using Kodlama.io.Devs.Application.Features.Technologies.Dtos;
 using Kodlama.io.Devs.Application.Features.Technologies.Models;
 using Kodlama.io.Devs.Application.Features.Technologies.Queries.GetByIdTechnology;
 using Kodlama.io.Devs.Application.Features.Technologies.Queries.GetListTechnology;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kodlama.io.Devs.WebAPI.Controllers
