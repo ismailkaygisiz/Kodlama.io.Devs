@@ -20,7 +20,18 @@
 	
   <ItemGroup>
     <Folder Include="Features\AppUsers\Constants\" />
+    <Folder Include="Features\AppUsers\Models\" />
     <Folder Include="Features\AppUsers\Queries\" />
+    <Folder Include="Features\UserOperationClaims\Commands\CreateUserOperationClaim\" />
+    <Folder Include="Features\UserOperationClaims\Commands\DeleteUserOperationClaim\" />
+    <Folder Include="Features\UserOperationClaims\Commands\UpdateUserOperationClaim\" />
+    <Folder Include="Features\UserOperationClaims\Constants\" />
+    <Folder Include="Features\UserOperationClaims\Dtos\" />
+    <Folder Include="Features\UserOperationClaims\Models\" />
+    <Folder Include="Features\UserOperationClaims\Queries\" />
+    <Folder Include="Features\UserOperationClaims\Rules\" />
+    <Folder Include="Features\OperationClaims\Constants\" />
+    <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
     <Folder Include="Features\Technologies\Constants\" />
   </ItemGroup>

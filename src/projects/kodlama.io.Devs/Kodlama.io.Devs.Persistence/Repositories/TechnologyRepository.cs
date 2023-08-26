@@ -5,7 +5,7 @@ using Kodlama.io.Devs.Persistence.Contexts;
 
 namespace Kodlama.io.Devs.Persistence.Repositories
 {
-    public class TechnologyRepository : EfRepositoryBase<Technology, BaseDbContext>, ITechnologyRepository
+    public class TechnologyRepository : EfRepositoryBase<Technology, int, BaseDbContext>, ITechnologyRepository
     {
         public TechnologyRepository(BaseDbContext context) : base(context)
         {

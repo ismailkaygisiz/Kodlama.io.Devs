@@ -15,13 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
-    <ProjectReference Include="..\Core.Security\Core.Security.csproj" />
+    <Folder Include="Pipelines\Caching\" />
+    <Folder Include="Pipelines\Authorization\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pipelines\Caching\" />
-    <Folder Include="Pipelines\Authorization\" />
+    <ProjectReference Include="..\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
+    <ProjectReference Include="..\Core.Security\Core.Security.csproj" />
   </ItemGroup>
 
 </Project>

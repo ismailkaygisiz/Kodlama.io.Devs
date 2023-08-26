@@ -5,7 +5,7 @@ using Kodlama.io.Devs.Persistence.Contexts;
 
 namespace Kodlama.io.Devs.Persistence.Repositories
 {
-    public class ProgrammingLanguageRepository : EfRepositoryBase<ProgrammingLanguage, BaseDbContext>, IProgrammingLanguageRepository
+    public class ProgrammingLanguageRepository : EfRepositoryBase<ProgrammingLanguage, int, BaseDbContext>, IProgrammingLanguageRepository
     {
         public ProgrammingLanguageRepository(BaseDbContext context) : base(context)
         {

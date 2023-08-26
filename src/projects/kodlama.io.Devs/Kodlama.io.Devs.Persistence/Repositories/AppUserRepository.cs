@@ -5,7 +5,7 @@ using Kodlama.io.Devs.Persistence.Contexts;
 
 namespace Kodlama.io.Devs.Persistence.Repositories
 {
-    public class AppUserRepository : EfRepositoryBase<AppUser, BaseDbContext>, IAppUserRepository
+    public class AppUserRepository : EfRepositoryBase<AppUser, int, BaseDbContext>, IAppUserRepository
     {
         public AppUserRepository(BaseDbContext context) : base(context)
         {

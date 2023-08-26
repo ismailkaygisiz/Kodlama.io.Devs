@@ -3,7 +3,7 @@ using Kodlama.io.Devs.Domain.Entities;
 
 namespace Kodlama.io.Devs.Application.Services.Repositories
 {
-    public interface ITechnologyRepository : IRepository<Technology>, IAsyncRepository<Technology>
+    public interface ITechnologyRepository : IRepository<Technology, int>, IAsyncRepository<Technology, int>
     {
 
     }
